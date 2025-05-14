@@ -1,0 +1,169 @@
+/* Переменные можно вынести в :root, если нужно использовать тёмную тему */
+
+.sidebar {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 320px;
+  max-width: 90%;
+  height: calc(100% - 60px);
+  background: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  box-shadow: 3px 0 15px rgba(0, 0, 0, 0.1);
+  padding: 20px 24px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: slideInLeft 0.3s ease-out;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0.3;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.sidebar h2 {
+  margin: 20px 0px 0px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  
+}
+
+.sidebar p {
+  margin: 0;
+  color: #555;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  font-size: 14px;
+}
+
+.marker-img-container {
+  position: relative;
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.marker-img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: filter 0.3s ease;
+}
+
+.marker-img-container:hover .marker-img {
+  filter: brightness(0.5);
+}
+
+.img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.marker-img-container:hover .img-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.fullscreen-img-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  cursor: zoom-out;
+}
+
+.fullscreen-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.marker-owner {
+  font-size: 12px;
+  color: #888;
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid #eee;
+}
+
+.close-btn {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: transparent;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.2s;
+  z-index: 1;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+.sidebar-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.sidebar-actions button {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: white;
+}
+
+.sidebar-actions button:first-child {
+  background-color: #3b82f6; /* синий */
+}
+
+.sidebar-actions button:first-child:hover {
+  background-color: #2563eb;
+}
+
+.sidebar-actions button:last-child {
+  background-color: #ef4444; /* красный */
+}
+
+.sidebar-actions button:last-child:hover {
+  background-color: #dc2626;
+}

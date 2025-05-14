@@ -1,0 +1,185 @@
+:root {
+  --modal-bg: #fff;
+  --text-color: #000;
+  --input-bg: #fff;
+  --input-border: #ccc;
+  --button-primary: #007bff;
+  --button-primary-hover: #005ecb;
+  --button-secondary: #f0f0f0;
+  --backdrop-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Тёмная тема */
+body.dark-mode :root {
+  --modal-bg: #1e1e1e;
+  --text-color: #f9f9f9;
+  --input-bg: #2c2c2c;
+  --input-border: #444;
+  --button-primary: #4a90e2;
+  --button-primary-hover: #357ab8;
+  --button-secondary: #333;
+  --backdrop-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--backdrop-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  overflow-x: auto;
+}
+
+.modal {
+  background: var(--modal-bg);
+  color: var(--text-color);
+  padding: 24px;
+  border-radius: 16px;
+  width: 420px;
+  max-width: 90%;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: auto;
+}
+
+.modal h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.modal input[type="text"],
+.modal textarea {
+  width: 95%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--text-color);
+  font-size: 14px;
+  resize: vertical;
+}
+
+.modal textarea {
+  min-height: 80px;
+}
+
+.modal input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background-color: var(--button-secondary);
+  color: var(--text-color);
+  border: 1px solid var(--input-border);
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.preview {
+  width: 100%;
+  max-height: 1000px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 10px;
+  border: 1px solid var(--input-border);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.actions button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.actions button:first-child {
+  background: var(--button-secondary);
+  color: var(--text-color);
+}
+
+.actions button:last-child {
+  background: var(--button-primary);
+  color: white;
+}
+
+.actions button:last-child:hover {
+  background: var(--button-primary-hover);
+}
+
+/* Drag & Drop зона */
+.drop-zone {
+  padding: 14px;
+  border: 2px dashed var(--input-border);
+  border-radius: 10px;
+  text-align: center;
+  color: var(--text-color);
+  background-color: var(--input-bg);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.preview-slider {
+  max-height: 220px;
+  overflow-y: auto;
+  border-radius: 8px;
+  border: 1px solid var(--input-border);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.preview-slider img {
+  width: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.drop-zone:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.preview-slider {
+  max-height: 240px;
+  overflow-y: auto;
+  border-radius: 8px;
+  border: 1px solid var(--input-border);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.preview-slider img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.scrollable-modal {
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.modal {
+  overflow-x: hidden;
+}

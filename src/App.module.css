@@ -1,0 +1,65 @@
+.app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;          /* высота хедера */
+    background: rgba(255, 255, 255, 0.7);  /* белый цвет с 70% прозрачностью */
+    padding: 0 16px;       /* отступы */
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* лёгкая тень */
+  }
+  
+  .searchBox {
+    flex: 1;
+    max-width: 350px;
+  }
+  
+  .loginBox {
+    margin-left: 16px;
+  }
+  
+  .mapContainer {
+    margin-top: 50px;
+    height: calc(100vh - 50px);
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  .userInfo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .userAvatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  .userName {
+    margin-right: 12px;
+    font-weight: 500;
+  }
+  
+  .logoutBtn {
+    background: transparent;
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .logoutBtn:hover {
+    background: #f0f0f0;
+  }

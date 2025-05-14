@@ -1,0 +1,23 @@
+  .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .clearAllBtn {
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    z-index: 1000;
+    padding: 8px 14px;
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  .clearAllBtn:hover {
+    background-color: #dc2626;
+  }
