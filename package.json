@@ -45,7 +45,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://map-project1-production.up.railway.app",
+  "proxy": "map-project1-production.up.railway.app",
   "devDependencies": {
     "concurrently": "^9.1.2"
   }
